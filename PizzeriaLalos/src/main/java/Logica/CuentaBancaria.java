@@ -1,5 +1,5 @@
 
-package Banco;
+package Logica;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class CuentaBancaria {
     private String curp;
     private String correo; 
     private String password; 
-    public static String nombreBanco= "Banco BXZ";
+        public static String nombreBanco= "PIZZERIA LALO'S";
 
     public CuentaBancaria(String cliente, String usuario, int numeroCuenta, double saldo, String curp, String correo, String password) {
         this.cliente = cliente;
