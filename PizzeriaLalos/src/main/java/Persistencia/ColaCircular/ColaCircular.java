@@ -1,9 +1,5 @@
 package Persistencia.ColaCircular;
 
-/**
- *
- * @author fwscg
- */
 public class ColaCircular {
 
     private Nodo frente;

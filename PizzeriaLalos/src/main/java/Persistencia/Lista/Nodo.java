@@ -1,5 +1,5 @@
 
-package Persistencia;
+package Persistencia.Lista;
 
 public class Nodo {
 
