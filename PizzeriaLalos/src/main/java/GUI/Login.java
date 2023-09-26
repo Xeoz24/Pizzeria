@@ -1,9 +1,7 @@
 
 package GUI;
 
-import Banco.CuentaLogic;
 import javax.swing.JOptionPane;
-
 
 public class Login extends javax.swing.JFrame {
 

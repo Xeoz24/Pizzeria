@@ -4,8 +4,6 @@
  */
 package GUI;
 
-import Banco.CuentaBancaria;
-import Banco.CuentaLogic;
 import javax.swing.JOptionPane;
 
 /**
