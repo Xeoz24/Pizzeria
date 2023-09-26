@@ -26,7 +26,7 @@ public class Login {
     public void iniciarSesion(String correo_electronico, String num_telofonico, String password) {
         if(correo_electronico.equals(correo_electronico)&& password.equals(password)){
             
-        }if(correo_electronico.)
+        }if(correo_electronico)
     }
 
     public String getNombres() {

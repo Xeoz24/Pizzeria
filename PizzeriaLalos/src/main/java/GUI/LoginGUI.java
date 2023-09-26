@@ -1,11 +1,12 @@
 
 package GUI;
 
+import Logica.Login;
 import javax.swing.JOptionPane;
 
-public class Login extends javax.swing.JFrame {
+public class LoginGUI extends javax.swing.JFrame {
 
-public Login() {
+public LoginGUI() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -29,6 +30,7 @@ public Login() {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         jPanel3.setBackground(new java.awt.Color(52, 73, 94));
 
@@ -46,7 +48,7 @@ public Login() {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -83,7 +85,7 @@ public Login() {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
 
-        chkMostrarPassword.setBackground(new java.awt.Color(255, 255, 255));
+        chkMostrarPassword.setBackground(new java.awt.Color(204, 204, 204));
         chkMostrarPassword.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         chkMostrarPassword.setText("Mostrar contraseña");
         chkMostrarPassword.setBorder(null);
@@ -96,6 +98,7 @@ public Login() {
 
         jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 10)); // NOI18N
         jLabel4.setText("¿No tienes una cuenta?");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 128, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto Black", 0, 10)); // NOI18N
@@ -110,7 +113,7 @@ public Login() {
         });
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(46, 64, 83));
+        jPanel2.setBackground(new java.awt.Color(153, 0, 51));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -125,28 +128,38 @@ public Login() {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
 
-        jPanel4.setBackground(new java.awt.Color(46, 64, 83));
+        jPanel4.setBackground(new java.awt.Color(153, 0, 51));
 
         jLabel6.setBackground(new java.awt.Color(46, 64, 83));
         jLabel6.setFont(new java.awt.Font("Calisto MT", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("BXZ");
+        jLabel6.setText("Lalo's");
+
+        jLabel7.setBackground(new java.awt.Color(46, 64, 83));
+        jLabel7.setFont(new java.awt.Font("Calisto MT", 3, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("pizzeria");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 11, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 90, 220));
@@ -170,22 +183,12 @@ public Login() {
     }//GEN-LAST:event_chkMostrarPasswordActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       if(!txtUsuario.getText().isEmpty() &&!txtPassword.getText().isEmpty()){
-           if(CuentaLogic.autentificar(txtUsuario.getText(), txtPassword.getText())){
-              Operaciones  operaciones = new Operaciones(CuentaLogic.obtener(txtUsuario.getText()));
-              operaciones.setVisible(true);
-              
-              
-       }else{
-             JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos");
-           }
-       }else{
-       JOptionPane.showMessageDialog(this, "Ingrese su usuario o contraseña");
-       }
+       Login sesion =new Login();
+       sesion.iniciarSesion(txtUsuario,txtPassword);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        AcountRegister frmRegister = new AcountRegister(this,true);
+        AcountRegisterGUI frmRegister = new AcountRegisterGUI(this,true);
         frmRegister.setVisible(true);
     }//GEN-LAST:event_jLabel5MouseClicked
 
@@ -206,20 +209,21 @@ public Login() {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new LoginGUI().setVisible(true);
             }
         });
     }
@@ -233,6 +237,7 @@ public Login() {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

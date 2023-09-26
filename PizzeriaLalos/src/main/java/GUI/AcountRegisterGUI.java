@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author fwscg
  */
-public class AcountRegister extends java.awt.Dialog {
+public class AcountRegisterGUI extends java.awt.Dialog {
 
     /**
      * Creates new form AcountRegister
      */
-    public AcountRegister(java.awt.Frame parent, boolean modal) {
+    public AcountRegisterGUI(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
@@ -364,7 +364,7 @@ public class AcountRegister extends java.awt.Dialog {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                AcountRegister dialog = new AcountRegister(new java.awt.Frame(), true);
+                AcountRegisterGUI dialog = new AcountRegisterGUI(new java.awt.Frame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
