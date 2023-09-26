@@ -1,6 +1,8 @@
 
 package Persistencia.Lista;
 
+import Logica.Usuario;
+
 
 public class ListaDoblementeEnlazada {
     
@@ -14,8 +16,8 @@ public class ListaDoblementeEnlazada {
         this.longitud = 0;
     }
 
-    public void insertar(int dato) {
-        Nodo nuevoNodo = new Nodo(dato);
+    public void insertar(Usuario usuario) {
+        Nodo nuevoNodo = new Nodo(usuario);
         if (primerNodo == null) {
             primerNodo = nuevoNodo;
             ultimoNodo = nuevoNodo; // Si la lista está vacía, el último nodo es el primero
@@ -27,10 +29,10 @@ public class ListaDoblementeEnlazada {
         longitud++;
     }
 
-    public int obtener(int indice) {
+    public Usuario obtener(int indice) {
         if (indice < 0 || indice >= longitud) {
             System.err.println("Indice fuera de rango");
-            return -1;
+            return null;
         }
         Nodo nodoActual;
         // Si el índice está más cerca del principio de la lista, empezamos desde el
@@ -47,7 +49,7 @@ public class ListaDoblementeEnlazada {
             }
         }
 
-        return nodoActual.getDato();
+        return nodoActual.getUsuario();
     }
 
     public void eliminar(int indice) {

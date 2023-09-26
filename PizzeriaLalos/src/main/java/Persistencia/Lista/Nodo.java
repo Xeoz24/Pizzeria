@@ -1,23 +1,25 @@
 
 package Persistencia.Lista;
 
+import Logica.Usuario;
+
 public class Nodo {
 
-    private int dato;
+    private Usuario usuario;
     private Nodo siguiente;
     private Nodo anterior;
 
-    public Nodo(int dato) {
-        this.dato = dato;
+    public Nodo(Usuario usuario) {
+        this.usuario = usuario;
         this.siguiente = null;
     }
 
-    public int getDato() {
-        return dato;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setDato(int dato) {
-        this.dato = dato;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Nodo getSiguiente() {

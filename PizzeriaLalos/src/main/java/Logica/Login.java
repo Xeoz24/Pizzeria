@@ -1,15 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Logica;
 
-/**
- *
- * @author Eduardo
- */
+import Persistencia.Lista.ListaDoblementeEnlazada;
+
 public class Login {
 
+    private ListaDoblementeEnlazada lista_usuarios;
     private String nombres, apellidos, correo_electronico, num_telofonico, password;
 
     public Login() {
@@ -21,12 +16,34 @@ public class Login {
         this.correo_electronico = correo_electronico;
         this.num_telofonico = num_telofonico;
         this.password = password;
+        lista_usuarios = new ListaDoblementeEnlazada();
     }
 
-    public void iniciarSesion(String correo_electronico, String num_telofonico, String password) {
-        if(correo_electronico.equals(correo_electronico)&& password.equals(password)){
-            
-        }if(correo_electronico.)
+    public String iniciarSesion(String metodo_registro, String password) {
+        String mensaje_autenticacion = " ";
+        //Autenticacion correo_electronico
+        if (metodo_registro.equals(correo_electronico)) {
+            if (password.equals(password)) {
+
+            } else {
+                mensaje_autenticacion = "Contraseña incorrecta";
+            }
+
+        } else {
+            mensaje_autenticacion = "Correo electronico no encontrado";
+        }
+        // Autenticacion num_telefonico
+        if (metodo_registro.equals(num_telofonico)) {
+            if (password.equals(password)) {
+
+            } else {
+                mensaje_autenticacion = "Contraseña incorrecta";
+            }
+
+        } else {
+            mensaje_autenticacion = "Numero de telefono  no encontrado";
+        }
+        return mensaje_autenticacion;
     }
 
     public String getNombres() {
