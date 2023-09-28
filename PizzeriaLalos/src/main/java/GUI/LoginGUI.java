@@ -183,8 +183,8 @@ public LoginGUI() {
     }//GEN-LAST:event_chkMostrarPasswordActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Login sesion =new Login();
-       sesion.iniciarSesion(txtUsuario,txtPassword);
+       
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
