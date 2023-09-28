@@ -142,6 +142,7 @@ public class LoginGUI extends javax.swing.JFrame {
 
         txtcorreo_electronico.setBackground(new java.awt.Color(240, 240, 240));
         txtcorreo_electronico.setText("Correo electronico");
+        txtcorreo_electronico.setBorder(null);
         Backg.add(txtcorreo_electronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 210, 30));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -152,25 +153,49 @@ public class LoginGUI extends javax.swing.JFrame {
 
         txtpassword.setBackground(new java.awt.Color(240, 240, 240));
         txtpassword.setText("jPasswordField1");
+        txtpassword.setBorder(null);
         Backg.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 210, 30));
 
         cbRember_me.setText("recuerda me");
+        cbRember_me.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Backg.add(cbRember_me, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         lblRegister.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         lblRegister.setText("registarse");
+        lblRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblRegisterMouseClicked(evt);
+            }
+        });
         Backg.add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
 
         btnLogin.setBackground(new java.awt.Color(204, 0, 0));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
         Backg.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 180, 40));
 
         getContentPane().add(Backg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegisterMouseClicked
+        RegisterGUI crear = new RegisterGUI();
+        crear.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblRegisterMouseClicked
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
