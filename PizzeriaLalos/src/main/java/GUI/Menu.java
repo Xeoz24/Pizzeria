@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package GUI;
 
 /**
@@ -61,6 +58,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel6.setText("jLabel6");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/hawaiana.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel5MousePressed(evt);
+            }
+        });
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/vegetariana.png"))); // NOI18N
 
@@ -90,7 +92,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel8)
-                .addGap(0, 3, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,6 +150,10 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5MousePressed
 
     /**
      * @param args the command line arguments

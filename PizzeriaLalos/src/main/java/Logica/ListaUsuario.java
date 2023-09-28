@@ -1,20 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Logica;
 
 import Persistencia.Lista.ListaDoblementeEnlazada;
 
-/**
- *
- * @author fwscg
- */
+
 public class ListaUsuario {
-    private final ListaDoblementeEnlazada lista_usuarios;
     
+   private ListaDoblementeEnlazada cuentas_existentes;
     public ListaUsuario(){
-    lista_usuarios = new ListaDoblementeEnlazada(); 
+     cuentas_existentes = new ListaDoblementeEnlazada();
     }
+    
+    public boolean insertar (Usuario usuario){
+        if (cuentas_existentes.getUsuario(usuario.getID()) == cuentas_existentes.getUsuario(0)) {
+        
+        }
+    return true ;
+    }
+    
+   
+    
     
 }

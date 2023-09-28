@@ -4,7 +4,7 @@ import Persistencia.Lista.ListaDoblementeEnlazada;
 
 public class Login {
 
-    private ListaDoblementeEnlazada lista_usuarios;
+    private static final ListaUsuario lista_usuarios = new ListaUsuario();
     private String nombres, apellidos, correo_electronico, num_telofonico, password;
 
     public Login() {
@@ -16,7 +16,6 @@ public class Login {
         this.correo_electronico = correo_electronico;
         this.num_telofonico = num_telofonico;
         this.password = password;
-        lista_usuarios = new ListaDoblementeEnlazada();
     }
 
     public String iniciarSesion(String metodo_registro, String password) {
@@ -46,44 +45,6 @@ public class Login {
         return mensaje_autenticacion;
     }
 
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getNum_telofonico() {
-        return num_telofonico;
-    }
-
-    public void setNum_telofonico(String num_telofonico) {
-        this.num_telofonico = num_telofonico;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getCorreo_electronico() {
-        return correo_electronico;
-    }
-
-    public void setCorreo_electronico(String correo_electronico) {
-        this.correo_electronico = correo_electronico;
-    }
+    
 
 }

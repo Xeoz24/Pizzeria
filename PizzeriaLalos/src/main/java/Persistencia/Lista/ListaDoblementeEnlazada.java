@@ -29,14 +29,13 @@ public class ListaDoblementeEnlazada {
         longitud++;
     }
 
-    public Usuario obtener(int indice) {
+        public Usuario getUsuario(int indice) {
         if (indice < 0 || indice >= longitud) {
             System.err.println("Indice fuera de rango");
             return null;
         }
         Nodo nodoActual;
-        // Si el índice está más cerca del principio de la lista, empezamos desde el
-        // principio.
+        // Si el índice está más cerca del principio de la lista, empezamos desde el principio.
         if (indice <= longitud / 2) {
             nodoActual = primerNodo;
             for (int i = 0; i < indice; i++) {
