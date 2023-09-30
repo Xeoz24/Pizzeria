@@ -1,13 +1,9 @@
-
 package Persistencia.Lista;
 
-import Logica.Usuario;
-
-
-public class ListaDoblementeEnlazada {
+public class ListaDoblementeEnlazada<T> {
     
-    private Nodo primerNodo;
-    private Nodo ultimoNodo;
+    private Nodo<T> primerNodo;
+    private Nodo<T> ultimoNodo;
     private int longitud;
 
     public ListaDoblementeEnlazada() {
@@ -16,46 +12,44 @@ public class ListaDoblementeEnlazada {
         this.longitud = 0;
     }
 
-    public void insertar(Usuario usuario) {
-        Nodo nuevoNodo = new Nodo(usuario);
+    public void insertar(T elemento) {
+        Nodo<T> nuevoNodo = new Nodo<>(elemento);
         if (primerNodo == null) {
             primerNodo = nuevoNodo;
-            ultimoNodo = nuevoNodo; // Si la lista está vacía, el último nodo es el primero
+            ultimoNodo = nuevoNodo;
         } else {
-            nuevoNodo.setAnterior(ultimoNodo); // El nodo anterior al nuevo nodo es el último nodo
-            ultimoNodo.setSiguiente(nuevoNodo); // El siguiente del último nodo es el nuevo nodo
-            ultimoNodo = nuevoNodo; // El nuevo nodo se convierte en el último nodo
+            nuevoNodo.setAnterior(ultimoNodo);
+            ultimoNodo.setSiguiente(nuevoNodo);
+            ultimoNodo = nuevoNodo;
         }
         longitud++;
     }
 
-        public Usuario getUsuario(int indice) {
+    public T obtener(int indice) {
         if (indice < 0 || indice >= longitud) {
-            System.err.println("Indice fuera de rango");
+            System.err.println("Índice fuera de rango");
             return null;
         }
-        Nodo nodoActual;
-        // Si el índice está más cerca del principio de la lista, empezamos desde el principio.
+        Nodo<T> nodoActual;
         if (indice <= longitud / 2) {
             nodoActual = primerNodo;
             for (int i = 0; i < indice; i++) {
                 nodoActual = nodoActual.getSiguiente();
             }
-        } else { // Si está más cerca del final de la lista, empezamos desde el final.
+        } else {
             nodoActual = ultimoNodo;
             for (int i = longitud - 1; i > indice; i--) {
                 nodoActual = nodoActual.getAnterior();
             }
         }
-
-        return nodoActual.getUsuario();
+        return nodoActual.getElemento();
     }
 
     public void eliminar(int indice) {
         if (indice < 0 || indice >= longitud) {
             throw new IndexOutOfBoundsException("Índice fuera de rango");
         }
-        Nodo nodoEliminar;
+        Nodo<T> nodoEliminar;
         if (indice == 0) {
             nodoEliminar = primerNodo;
             primerNodo = primerNodo.getSiguiente();
@@ -64,7 +58,7 @@ public class ListaDoblementeEnlazada {
             ultimoNodo = ultimoNodo.getAnterior();
             ultimoNodo.setSiguiente(null);
         } else {
-            Nodo nodoActual;
+            Nodo<T> nodoActual;
             if (indice < longitud / 2) {
                 nodoActual = primerNodo;
                 for (int i = 0; i < indice; i++) {

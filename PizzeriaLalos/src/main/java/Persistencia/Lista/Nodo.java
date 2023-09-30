@@ -1,40 +1,37 @@
-
 package Persistencia.Lista;
 
-import Logica.Usuario;
+public class Nodo<T> {
+    private T elemento;
+    private Nodo<T> siguiente;
+    private Nodo<T> anterior;
 
-public class Nodo {
-
-    private Usuario usuario;
-    private Nodo siguiente;
-    private Nodo anterior;
-
-    public Nodo(Usuario usuario) {
-        this.usuario = usuario;
+    public Nodo(T elemento) {
+        this.elemento = elemento;
         this.siguiente = null;
+        this.anterior = null;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public T getElemento() {
+        return elemento;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setElemento(T elemento) {
+        this.elemento = elemento;
     }
 
-    public Nodo getSiguiente() {
+    public Nodo<T> getSiguiente() {
         return siguiente;
     }
 
-    public void setSiguiente(Nodo siguiente) {
+    public void setSiguiente(Nodo<T> siguiente) {
         this.siguiente = siguiente;
     }
 
-    public Nodo getAnterior() {
+    public Nodo<T> getAnterior() {
         return anterior;
     }
 
-    public void setAnterior(Nodo anterior) {
+    public void setAnterior(Nodo<T> anterior) {
         this.anterior = anterior;
     }
 }

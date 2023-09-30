@@ -1,50 +1,64 @@
 package Logica;
 
-import Persistencia.Lista.ListaDoblementeEnlazada;
-
 public class Login {
 
     private static final ListaUsuario lista_usuarios = new ListaUsuario();
-    private String nombres, apellidos, correo_electronico, num_telofonico, password;
+    private static String mensaje_autenticacion = " ";
 
     public Login() {
+
     }
 
-    public Login(String nombres, String apellidos, String correo_electronico, String num_telofonico, String password) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.correo_electronico = correo_electronico;
-        this.num_telofonico = num_telofonico;
-        this.password = password;
-    }
-
-    public String iniciarSesion(String metodo_registro, String password) {
-        String mensaje_autenticacion = " ";
-        //Autenticacion correo_electronico
-        if (metodo_registro.equals(correo_electronico)) {
-            if (password.equals(password)) {
+    public boolean iniciarSesion(String metodo_registro, String password) {
+        boolean autenticacion = false;   
+        int IDaux = lista_usuarios.buscar(metodo_registro);
+        if (IDaux == -1) {
+//Autenticacion correo_electronico
+            if (obtenerUsuario(IDaux).getCorreo_electronico().equals(metodo_registro)) {
+                if (obtenerUsuario(IDaux).getPassword().equals(password)) {
+                    autenticacion = true;
+                } else {
+                    mensaje_autenticacion = "Contraseña incorrecta";
+                }
+            } else {
+                mensaje_autenticacion = "Correo electronico no encontrado";
+            }
+// Autenticacion num_telefonico
+            if (obtenerUsuario(IDaux).getNumero_telefonico().equals(metodo_registro)) {
+                if (obtenerUsuario(IDaux).getPassword().equals(password)) {
+                    autenticacion = true;
+                } else {
+                    mensaje_autenticacion = "Contraseña incorrecta";
+                }
 
             } else {
-                mensaje_autenticacion = "Contraseña incorrecta";
+                mensaje_autenticacion = "Numero de telefono  no encontrado";
             }
 
         } else {
-            mensaje_autenticacion = "Correo electronico no encontrado";
+            mensaje_autenticacion = "No se encuentra registrado, por favor registrece";
         }
-        // Autenticacion num_telefonico
-        if (metodo_registro.equals(num_telofonico)) {
-            if (password.equals(password)) {
+        return autenticacion;
+    }
 
-            } else {
-                mensaje_autenticacion = "Contraseña incorrecta";
-            }
+    public void agregar(Usuario usuario) {
+        lista_usuarios.agregarUsuario(usuario);
+    }
 
-        } else {
-            mensaje_autenticacion = "Numero de telefono  no encontrado";
-        }
+    public int buscarUsuario(String metodo_ini) {
+        return lista_usuarios.buscar(metodo_ini);
+    }
+
+    public static String getMensaje_autenticacion() {
         return mensaje_autenticacion;
     }
 
-    
+    public Usuario obtenerUsuario(int indice) {
+        return lista_usuarios.obtenerUsuario(indice);
+    }
+
+    public static void setMensaje_autenticacion(String mensaje_autenticacion) {
+        Login.mensaje_autenticacion = mensaje_autenticacion;
+    }
 
 }
