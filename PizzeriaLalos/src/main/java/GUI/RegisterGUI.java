@@ -22,6 +22,7 @@ public class RegisterGUI extends javax.swing.JFrame {
      */
     public RegisterGUI() {
         initComponents();
+        setLocationRelativeTo(null);
 
         configureTextField(txtnombre, "Nombre");
         configureTextField(txtapellido, "Apellido");
@@ -126,6 +127,10 @@ public class RegisterGUI extends javax.swing.JFrame {
         btnregister = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -159,67 +164,67 @@ public class RegisterGUI extends javax.swing.JFrame {
         txtnombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtnombre.setText("Nombre");
         txtnombre.setBorder(null);
-        Backg.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 210, 30));
+        Backg.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 210, 30));
 
         txtapellido.setBackground(new java.awt.Color(240, 240, 240));
         txtapellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtapellido.setText("Apellido");
         txtapellido.setBorder(null);
-        Backg.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 210, 30));
+        Backg.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 210, 30));
 
         txtemail.setBackground(new java.awt.Color(240, 240, 240));
         txtemail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtemail.setText("Correo Electronico");
         txtemail.setBorder(null);
-        Backg.add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 210, 30));
+        Backg.add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 210, 30));
 
         txttelefono.setBackground(new java.awt.Color(240, 240, 240));
         txttelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txttelefono.setText("Teléfono");
         txttelefono.setBorder(null);
-        Backg.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 210, 30));
+        Backg.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 210, 30));
 
         txtpassword.setBackground(new java.awt.Color(240, 240, 240));
         txtpassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtpassword.setText("jPasswordField1");
         txtpassword.setBorder(null);
-        Backg.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 210, 30));
+        Backg.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 210, 30));
 
         txtpassword_confirmed.setBackground(new java.awt.Color(240, 240, 240));
         txtpassword_confirmed.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtpassword_confirmed.setText("jPasswordField2");
         txtpassword_confirmed.setBorder(null);
-        Backg.add(txtpassword_confirmed, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 210, 30));
+        Backg.add(txtpassword_confirmed, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 210, 30));
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        Backg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 210, 10));
+        Backg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, 210, 10));
 
         jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        Backg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 210, 10));
+        Backg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 210, 10));
 
         jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        Backg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 210, 10));
+        Backg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 210, 10));
 
         jSeparator4.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        Backg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 210, 10));
+        Backg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 210, 10));
 
         jSeparator5.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        Backg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 210, 10));
+        Backg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 210, 10));
 
         jSeparator6.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
-        Backg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 210, 10));
+        Backg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 210, 10));
 
-        lblcontraseña.setText("Contraseña");
-        Backg.add(lblcontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
+        lblcontraseña.setText("CONTRASEÑA");
+        Backg.add(lblcontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, -1, -1));
 
-        lblcontraseña_confirmar.setText("Confirmar contraseña");
-        Backg.add(lblcontraseña_confirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
+        lblcontraseña_confirmar.setText("CONFIRMAR CONTRASEÑA");
+        Backg.add(lblcontraseña_confirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, -1, -1));
 
         btnregister.setBackground(new java.awt.Color(204, 0, 0));
         btnregister.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -231,7 +236,7 @@ public class RegisterGUI extends javax.swing.JFrame {
                 btnregisterActionPerformed(evt);
             }
         });
-        Backg.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
+        Backg.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("¿ya tienes una cuenta?");
@@ -247,6 +252,18 @@ public class RegisterGUI extends javax.swing.JFrame {
             }
         });
         Backg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 560, -1, -1));
+
+        jLabel3.setText("TELÉFONO");
+        Backg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+
+        jLabel4.setText("CORREO ELECTRÓNICO");
+        Backg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+
+        jLabel5.setText("APELLIDOS");
+        Backg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
+
+        jLabel6.setText("NOMBRE");
+        Backg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
 
         getContentPane().add(Backg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 580));
 
@@ -319,6 +336,10 @@ public class RegisterGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnregister;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;

@@ -19,6 +19,7 @@ public class LoginGUI extends javax.swing.JFrame {
      */
     public LoginGUI() {
         initComponents();
+        setLocationRelativeTo(null);
         txtcorreo_electronico.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -67,6 +68,7 @@ public class LoginGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator3 = new javax.swing.JSeparator();
         Backg = new javax.swing.JPanel();
         pnlEncabezado = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -80,6 +82,9 @@ public class LoginGUI extends javax.swing.JFrame {
         cbRember_me = new javax.swing.JCheckBox();
         lblRegister = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -149,26 +154,27 @@ public class LoginGUI extends javax.swing.JFrame {
         Backg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 210, 10));
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        Backg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 210, 10));
+        Backg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 210, 10));
 
         txtpassword.setBackground(new java.awt.Color(240, 240, 240));
         txtpassword.setText("jPasswordField1");
         txtpassword.setBorder(null);
-        Backg.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 210, 30));
+        Backg.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 210, 30));
 
         cbRember_me.setText("recuerda me");
         cbRember_me.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Backg.add(cbRember_me, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         lblRegister.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        lblRegister.setText("registarse");
+        lblRegister.setForeground(new java.awt.Color(0, 102, 204));
+        lblRegister.setText("Registrarse");
         lblRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblRegister.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblRegisterMouseClicked(evt);
             }
         });
-        Backg.add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
+        Backg.add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, -1));
 
         btnLogin.setBackground(new java.awt.Color(204, 0, 0));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -180,7 +186,17 @@ public class LoginGUI extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        Backg.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 180, 40));
+        Backg.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 180, 40));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setText("¿Necesitas una cuenta?");
+        Backg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+
+        jLabel5.setText("CONTRASEÑA");
+        Backg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        jLabel6.setText("CORREO ELECTRÓNICO");
+        Backg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         getContentPane().add(Backg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 300));
 
@@ -238,11 +254,15 @@ public class LoginGUI extends javax.swing.JFrame {
     private javax.swing.JPanel Backg;
     private javax.swing.JButton btnLogin;
     private javax.swing.JCheckBox cbRember_me;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel lblRegister;
     private javax.swing.JPanel pnlEncabezado;
     private javax.swing.JPanel pnlPizzeria;
