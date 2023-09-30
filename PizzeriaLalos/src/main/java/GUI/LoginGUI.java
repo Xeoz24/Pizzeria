@@ -20,7 +20,11 @@ public class LoginGUI extends javax.swing.JFrame {
     public LoginGUI() {
         initComponents();
         setLocationRelativeTo(null);
-        txtcorreo_electronico.addFocusListener(new FocusListener() {
+        initFields();
+    }
+   //Metodos Propios 
+    public  final void initFields (){
+      txtcorreo_electronico.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
                 if (txtcorreo_electronico.getText().equals("Correo electronico")) {
@@ -58,7 +62,9 @@ public class LoginGUI extends javax.swing.JFrame {
             }
         });
     }
-
+        public void Autenticacion(){
+        
+        }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -210,7 +216,7 @@ public class LoginGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_lblRegisterMouseClicked
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**

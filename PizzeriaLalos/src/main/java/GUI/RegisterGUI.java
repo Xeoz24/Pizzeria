@@ -1,6 +1,6 @@
 package GUI;
 
-import Logica.ListaUsuario;
+import Logica.Login;
 import Logica.Usuario;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -9,8 +9,9 @@ import java.awt.event.KeyListener;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
+
 public class RegisterGUI extends javax.swing.JFrame {
-    
+    Login registro = new Login();
     static int IDs = 0;
     public RegisterGUI() {
         initComponents();
@@ -19,14 +20,23 @@ public class RegisterGUI extends javax.swing.JFrame {
         
     }
     
-    public void  regitstroUsuario( char [] password){
+    private void  regitstroUsuario(char[] password){
         String nombre_aux,apellidos_aux,email_aux,telefono_aux;
         nombre_aux = txtnombre.getText();
         apellidos_aux = txtapellido.getText();
         email_aux = txtemail.getText();
         telefono_aux = txttelefono.getText();
-        txtpassword.getPassword();
         Usuario usuario_aux = new Usuario(nombre_aux, apellidos_aux, telefono_aux, email_aux,password, IDs);
+        if (registro.agregar(usuario_aux)) {
+            IDs++;
+            JOptionPane.showMessageDialog(RegisterGUI.this, "Registro exitoso \nBienvenido "  +usuario_aux.getNombres() , "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
+            LoginGUI crear = new LoginGUI();
+            crear.setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(RegisterGUI.this, registro.getMensajeAdmin() , "Te chingas", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
         
         
         
@@ -296,8 +306,7 @@ public class RegisterGUI extends javax.swing.JFrame {
             char[] password2 = txtpassword_confirmed.getPassword();
 
             if (Arrays.equals(password1, password2)) {
-                
-                JOptionPane.showMessageDialog(RegisterGUI.this, "Registro exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                regitstroUsuario(password2);
             } else {
                 JOptionPane.showMessageDialog(RegisterGUI.this, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
             }

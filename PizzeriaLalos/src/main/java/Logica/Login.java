@@ -57,7 +57,9 @@ public class Login {
     public Usuario obtenerUsuario(int indice) {
         return lista_usuarios.obtenerUsuario(indice);
     }
-
+    public  String getMensajeAdmin(){
+      return ListaUsuario.getMensajes_de_administrador();
+    }
     public static void setMensaje_autenticacion(String mensaje_autenticacion) {
         Login.mensaje_autenticacion = mensaje_autenticacion;
     }
