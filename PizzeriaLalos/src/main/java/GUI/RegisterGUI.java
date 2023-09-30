@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
 import java.awt.event.FocusEvent;
@@ -11,27 +7,23 @@ import java.awt.event.KeyListener;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Eduardo
- */
 public class RegisterGUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form RegisterGUI
-     */
     public RegisterGUI() {
         initComponents();
         setLocationRelativeTo(null);
-
+        initFields  ();
+        
+    }
+    private void initFields(){
         configureTextField(txtnombre, "Nombre");
         configureTextField(txtapellido, "Apellido");
         configureTextField(txtemail, "Correo Electronico");
         configureTextField(txttelefono, "Teléfono");
         configurePasswordField(txtpassword, "Contraseña");
         configurePasswordField(txtpassword_confirmed, "Confirmar contraseña");
-    }
 
+    }
     private void configureTextField(javax.swing.JTextField textField, String placeholder) {
         textField.setText(placeholder);
 
@@ -90,7 +82,7 @@ public class RegisterGUI extends javax.swing.JFrame {
             public void keyReleased(KeyEvent e) {
                 char[] password = passwordField.getPassword();
                 String currentPassword = new String(password);
-
+                
                 if (currentPassword.isEmpty()) {
                     passwordField.setText(placeholder);
                 }
