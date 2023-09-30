@@ -95,7 +95,7 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("cantidad del producto");
+        jLabel2.setText("Cantidad del producto:");
 
         lblCantidad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblCantidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
