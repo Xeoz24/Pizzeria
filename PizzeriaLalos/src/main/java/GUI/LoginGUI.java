@@ -82,9 +82,9 @@ public class LoginGUI extends javax.swing.JFrame {
         cbRember_me = new javax.swing.JCheckBox();
         lblRegister = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblpregunta = new javax.swing.JLabel();
+        lblcontrasena = new javax.swing.JLabel();
+        lblemail = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -188,15 +188,15 @@ public class LoginGUI extends javax.swing.JFrame {
         });
         Backg.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 180, 40));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setText("¿Necesitas una cuenta?");
-        Backg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+        lblpregunta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblpregunta.setText("¿Necesitas una cuenta?");
+        Backg.add(lblpregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
 
-        jLabel5.setText("CONTRASEÑA");
-        Backg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        lblcontrasena.setText("CONTRASEÑA");
+        Backg.add(lblcontrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
-        jLabel6.setText("CORREO ELECTRÓNICO");
-        Backg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        lblemail.setText("CORREO ELECTRÓNICO");
+        Backg.add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         getContentPane().add(Backg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 300));
 
@@ -254,16 +254,16 @@ public class LoginGUI extends javax.swing.JFrame {
     private javax.swing.JPanel Backg;
     private javax.swing.JButton btnLogin;
     private javax.swing.JCheckBox cbRember_me;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel lblRegister;
+    private javax.swing.JLabel lblcontrasena;
+    private javax.swing.JLabel lblemail;
+    private javax.swing.JLabel lblpregunta;
     private javax.swing.JPanel pnlEncabezado;
     private javax.swing.JPanel pnlPizzeria;
     private javax.swing.JTextField txtcorreo_electronico;

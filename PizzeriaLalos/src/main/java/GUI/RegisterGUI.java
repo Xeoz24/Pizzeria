@@ -125,12 +125,12 @@ public class RegisterGUI extends javax.swing.JFrame {
         lblcontraseña = new javax.swing.JLabel();
         lblcontraseña_confirmar = new javax.swing.JLabel();
         btnregister = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblpregunta = new javax.swing.JLabel();
+        lbliniciar_sesion = new javax.swing.JLabel();
+        lbltelefono = new javax.swing.JLabel();
+        lblemail = new javax.swing.JLabel();
+        lblapellido = new javax.swing.JLabel();
+        lblnombre = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -229,7 +229,7 @@ public class RegisterGUI extends javax.swing.JFrame {
         btnregister.setBackground(new java.awt.Color(204, 0, 0));
         btnregister.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnregister.setForeground(new java.awt.Color(255, 255, 255));
-        btnregister.setText("REGISTARSE");
+        btnregister.setText("REGISTRARSE");
         btnregister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnregister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,43 +238,43 @@ public class RegisterGUI extends javax.swing.JFrame {
         });
         Backg.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setText("¿ya tienes una cuenta?");
-        Backg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
+        lblpregunta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblpregunta.setText("¿ya tienes una cuenta?");
+        Backg.add(lblpregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel2.setText("iniciar sesión");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbliniciar_sesion.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        lbliniciar_sesion.setForeground(new java.awt.Color(0, 102, 204));
+        lbliniciar_sesion.setText("iniciar sesión");
+        lbliniciar_sesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbliniciar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                lbliniciar_sesionMouseClicked(evt);
             }
         });
-        Backg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 560, -1, -1));
+        Backg.add(lbliniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 560, -1, -1));
 
-        jLabel3.setText("TELÉFONO");
-        Backg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+        lbltelefono.setText("TELÉFONO");
+        Backg.add(lbltelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
-        jLabel4.setText("CORREO ELECTRÓNICO");
-        Backg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+        lblemail.setText("CORREO ELECTRÓNICO");
+        Backg.add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
 
-        jLabel5.setText("APELLIDOS");
-        Backg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
+        lblapellido.setText("APELLIDOS");
+        Backg.add(lblapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
 
-        jLabel6.setText("NOMBRE");
-        Backg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
+        lblnombre.setText("NOMBRE");
+        Backg.add(lblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
 
         getContentPane().add(Backg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void lbliniciar_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbliniciar_sesionMouseClicked
         LoginGUI crear = new LoginGUI();
         crear.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_lbliniciar_sesionMouseClicked
 
     private void btnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisterActionPerformed
         if (!"Nombre".equals(txtnombre.getText()) && !"".equals(txtnombre.getText()) && !"Apellido".equals(txtapellido.getText())
@@ -282,13 +282,13 @@ public class RegisterGUI extends javax.swing.JFrame {
                 && !"Teléfono".equals(txttelefono.getText()) && !"".equals(txttelefono.getText()) && !"Contraseña".equals(String.valueOf(txtpassword.getPassword()))
                 && !"".equals(String.valueOf(txtpassword.getPassword())) && !"Confirmar contraseña".equals(String.valueOf(txtpassword_confirmed.getPassword()))
                 && !"".equals(String.valueOf(txtpassword_confirmed.getPassword()))) {
-            
+
             char[] password1 = txtpassword.getPassword();
             char[] password2 = txtpassword_confirmed.getPassword();
-            
+
             if (Arrays.equals(password1, password2)) {
                 JOptionPane.showMessageDialog(RegisterGUI.this, "Registro exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(RegisterGUI.this, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
@@ -334,20 +334,20 @@ public class RegisterGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Backg;
     private javax.swing.JButton btnregister;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JLabel lblapellido;
     private javax.swing.JLabel lblcontraseña;
     private javax.swing.JLabel lblcontraseña_confirmar;
+    private javax.swing.JLabel lblemail;
+    private javax.swing.JLabel lbliniciar_sesion;
+    private javax.swing.JLabel lblnombre;
+    private javax.swing.JLabel lblpregunta;
+    private javax.swing.JLabel lbltelefono;
     private javax.swing.JPanel pnlCabezera;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JLabel txtcabezera;
