@@ -154,7 +154,6 @@ public class RegisterGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Backg.setBackground(new java.awt.Color(240, 240, 240));
         Backg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlCabezera.setBackground(new java.awt.Color(153, 0, 51));
@@ -215,27 +214,21 @@ public class RegisterGUI extends javax.swing.JFrame {
         txtpassword_confirmed.setBorder(null);
         Backg.add(txtpassword_confirmed, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 210, 30));
 
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         Backg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, 210, 10));
 
-        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         Backg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 210, 10));
 
-        jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
         Backg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 210, 10));
 
-        jSeparator4.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         Backg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 210, 10));
 
-        jSeparator5.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
         Backg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 210, 10));
 
-        jSeparator6.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
         Backg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 210, 10));
 
@@ -263,7 +256,7 @@ public class RegisterGUI extends javax.swing.JFrame {
 
         lbliniciar_sesion.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         lbliniciar_sesion.setForeground(new java.awt.Color(0, 102, 204));
-        lbliniciar_sesion.setText("iniciar sesión");
+        lbliniciar_sesion.setText("Iniciar sesión");
         lbliniciar_sesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbliniciar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
