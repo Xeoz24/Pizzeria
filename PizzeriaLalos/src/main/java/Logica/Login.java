@@ -41,8 +41,9 @@ public class Login {
         return autenticacion;
     }
 
-    public void agregar(Usuario usuario) {
-        lista_usuarios.agregarUsuario(usuario);
+    public boolean agregar(Usuario usuario) {
+        return lista_usuarios.agregarUsuario(usuario);
+        
     }
 
     public int buscarUsuario(String metodo_ini) {

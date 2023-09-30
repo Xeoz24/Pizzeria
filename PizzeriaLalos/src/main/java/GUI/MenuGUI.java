@@ -16,9 +16,7 @@ public class MenuGUI extends javax.swing.JFrame {
 
     public MenuGUI() {
         initComponents();
-
         getContentPane().setBackground(Color.WHITE);
-
         setLocationRelativeTo(null);
     }
 

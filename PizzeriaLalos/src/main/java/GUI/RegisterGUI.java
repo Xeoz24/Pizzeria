@@ -1,5 +1,7 @@
 package GUI;
 
+import Logica.ListaUsuario;
+import Logica.Usuario;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
@@ -8,12 +10,27 @@ import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class RegisterGUI extends javax.swing.JFrame {
-
+    
+    static int IDs = 0;
     public RegisterGUI() {
         initComponents();
         setLocationRelativeTo(null);
         initFields  ();
         
+    }
+    
+    public void  regitstroUsuario( char [] password){
+        String nombre_aux,apellidos_aux,email_aux,telefono_aux;
+        nombre_aux = txtnombre.getText();
+        apellidos_aux = txtapellido.getText();
+        email_aux = txtemail.getText();
+        telefono_aux = txttelefono.getText();
+        txtpassword.getPassword();
+        Usuario usuario_aux = new Usuario(nombre_aux, apellidos_aux, telefono_aux, email_aux,password, IDs);
+        
+        
+        
+                    
     }
     private void initFields(){
         configureTextField(txtnombre, "Nombre");
@@ -279,6 +296,7 @@ public class RegisterGUI extends javax.swing.JFrame {
             char[] password2 = txtpassword_confirmed.getPassword();
 
             if (Arrays.equals(password1, password2)) {
+                
                 JOptionPane.showMessageDialog(RegisterGUI.this, "Registro exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(RegisterGUI.this, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);

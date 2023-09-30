@@ -6,10 +6,11 @@ public class Usuario {
     
     //Atributos de un usario
     
-    private String nombres,apellidos,correo_electronico,numero_telefonico, password;
+    private String nombres,apellidos,correo_electronico,numero_telefonico;
+    private char [] password;
     private int ID;
 
-    public Usuario(String nombres, String apellidos, String correo_electronico, String numero_telefonico, String password, int ID) {
+    public Usuario(String nombres, String apellidos, String correo_electronico, String numero_telefonico, char [] password ,int ID) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo_electronico = correo_electronico;
@@ -58,10 +59,11 @@ public class Usuario {
     }
 
     public String getPassword() {
-        return password;
+        String passwordString = String.valueOf(password);
+        return passwordString;
     }
 
-    public void setPassword(String password) {
+    public void setPassword( char []password) {
         this.password = password;
     }
 
