@@ -1,21 +1,24 @@
 package Persistencia.ColaCircular;
 
+import Logica.Pedidos.Pedidos;
+
 public class Nodo {
 
-    private int dato;
+    private Pedidos Pedidos;
     private Nodo siguiente;
 
-    public Nodo(int dato) {
-        this.dato = dato;
-        this.siguiente = null;
+    public Nodo() {
+    }
+    public Nodo(Pedidos Pedidos) {
+        this.Pedidos = Pedidos;
     }
 
-    public int getDato() {
-        return dato;
+    public Pedidos getPedidos() {
+        return Pedidos;
     }
 
-    public void setDato(int dato) {
-        this.dato = dato;
+    public void setPedidos(Pedidos Pedidos) {
+        this.Pedidos = Pedidos;
     }
 
     public Nodo getSiguiente() {
@@ -25,4 +28,6 @@ public class Nodo {
     public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
     }
+
+   
 }

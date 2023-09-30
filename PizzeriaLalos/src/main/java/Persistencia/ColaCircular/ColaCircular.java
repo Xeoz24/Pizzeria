@@ -1,11 +1,14 @@
 package Persistencia.ColaCircular;
 
+import Logica.Pedidos.Pedidos;
+
 public class ColaCircular {
 
     private Nodo frente;
     private Nodo atras;
     private int longitud;
-
+    private Pedidos pedido;
+    
     public ColaCircular() {
         frente = null;
         atras = null;
@@ -13,7 +16,7 @@ public class ColaCircular {
     }
 
     public void insertar(int dato) {
-        Nodo nuevoNodo = new Nodo(dato);
+        Nodo nuevoNodo = new Nodo(pedido);
         if (estaVacia()) {
             frente = nuevoNodo;
             atras = nuevoNodo;

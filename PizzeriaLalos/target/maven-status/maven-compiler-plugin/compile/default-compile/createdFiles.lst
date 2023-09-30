@@ -1,8 +1,8 @@
-GUI\RegisterGUI$1.class
 Logica\Login.class
 Persistencia\ColaCircular\Nodo.class
 Persistencia\Lista\Nodo.class
 Persistencia\Lista\ListaDoblementeEnlazada.class
+GUI\RegisterGUI$1.class
 GUI\EntregaPedidoGUI$2.class
 Logica\ListaUsuario.class
 GUI\EntregaPedidoGUI.class
