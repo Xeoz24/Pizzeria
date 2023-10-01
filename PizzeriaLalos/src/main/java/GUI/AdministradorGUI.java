@@ -17,7 +17,7 @@ public class AdministradorGUI extends javax.swing.JFrame {
      modeloAdmin.addRow(datos_filas);
     }
     public static final void setMensajeAdminstrador(String mensaje){
-    txtAreaConsola.append(Login.getMensajeAdmin()+"\n");
+    txtAreaConsola.append(mensaje+"\n");
     }
     
     @SuppressWarnings("unchecked")
