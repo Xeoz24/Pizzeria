@@ -44,15 +44,12 @@ public class MenuGUI extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        ordHawaiana = new javax.swing.JButton();
-        ordPepperoni = new javax.swing.JButton();
-        ordCarne = new javax.swing.JButton();
-        ordVegetariana = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
+        jButton1 = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -86,22 +83,6 @@ public class MenuGUI extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/vegetariana.png"))); // NOI18N
 
-        ordHawaiana.setBackground(new java.awt.Color(204, 0, 0));
-        ordHawaiana.setForeground(new java.awt.Color(255, 255, 255));
-        ordHawaiana.setText("Ordenar");
-
-        ordPepperoni.setBackground(new java.awt.Color(204, 0, 0));
-        ordPepperoni.setForeground(new java.awt.Color(255, 255, 255));
-        ordPepperoni.setText("Ordenar");
-
-        ordCarne.setBackground(new java.awt.Color(204, 0, 0));
-        ordCarne.setForeground(new java.awt.Color(255, 255, 255));
-        ordCarne.setText("Ordenar");
-
-        ordVegetariana.setBackground(new java.awt.Color(204, 0, 0));
-        ordVegetariana.setForeground(new java.awt.Color(255, 255, 255));
-        ordVegetariana.setText("Ordenar");
-
         jSeparator1.setBackground(new java.awt.Color(153, 0, 0));
 
         jTextArea1.setColumns(20);
@@ -112,14 +93,12 @@ public class MenuGUI extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(153, 0, 0));
 
+        jButton1.setText("Elegir pizzas");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(178, 178, 178)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +125,7 @@ public class MenuGUI extends javax.swing.JFrame {
                                 .addGap(28, 28, 28)
                                 .addComponent(jLabel13)
                                 .addGap(9, 9, 9)))
-                        .addContainerGap(11, Short.MAX_VALUE))
+                        .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
@@ -156,16 +135,6 @@ public class MenuGUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(ordHawaiana)
-                .addGap(94, 94, 94)
-                .addComponent(ordPepperoni)
-                .addGap(104, 104, 104)
-                .addComponent(ordCarne)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ordVegetariana)
-                .addGap(54, 54, 54))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator1)
@@ -182,13 +151,21 @@ public class MenuGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jSeparator3)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(174, 174, 174))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(306, 306, 306)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(8, 8, 8)
                 .addComponent(jLabel1)
-                .addGap(14, 14, 14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,13 +186,9 @@ public class MenuGUI extends javax.swing.JFrame {
                         .addComponent(jLabel10)))
                 .addGap(5, 5, 5)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ordHawaiana)
-                    .addComponent(ordPepperoni)
-                    .addComponent(ordCarne)
-                    .addComponent(ordVegetariana))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
@@ -274,6 +247,7 @@ public class MenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -294,9 +268,5 @@ public class MenuGUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton ordCarne;
-    private javax.swing.JButton ordHawaiana;
-    private javax.swing.JButton ordPepperoni;
-    private javax.swing.JButton ordVegetariana;
     // End of variables declaration//GEN-END:variables
 }
