@@ -9,40 +9,41 @@ import java.awt.event.KeyListener;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
-
 public class RegisterGUI extends javax.swing.JFrame {
 
+    AdministradorGUI admin_form = new AdministradorGUI();
     static int IDs = 0;
+
     public RegisterGUI() {
         initComponents();
         setLocationRelativeTo(null);
-        initFields  ();
-        
+        initFields();
+
     }
-    
-    private void  regitstroUsuario(char[] password){
-        String nombre_aux,apellidos_aux,email_aux,telefono_aux;
+
+    private void regitstroUsuario(char[] password) {
+        String nombre_aux, apellidos_aux, email_aux, telefono_aux;
         nombre_aux = txtnombre.getText();
         apellidos_aux = txtapellido.getText();
         email_aux = txtemail.getText();
         telefono_aux = txttelefono.getText();
-        Usuario usuario_aux = new Usuario(nombre_aux, apellidos_aux, telefono_aux, email_aux,password, IDs);
+        Usuario usuario_aux = new Usuario(nombre_aux, apellidos_aux, telefono_aux, email_aux, password, IDs);
         if (Login.agregar(usuario_aux)) {
+            String[] Datos = {nombre_aux, apellidos_aux, email_aux, telefono_aux, String.valueOf(IDs)};
+            AdministradorGUI.modelo_admin.addRow(Datos);
+            admin_form.setVisible(true);
             IDs++;
-            JOptionPane.showMessageDialog(RegisterGUI.this, "Registro exitoso \nBienvenido "  +usuario_aux.getNombres() , "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(RegisterGUI.this, "Registro exitoso \nBienvenido " + usuario_aux.getNombres(), "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
             LoginGUI crear = new LoginGUI();
             crear.setVisible(true);
             this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(RegisterGUI.this, Login.getMensajeAdmin() , "Te chingas", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(RegisterGUI.this, Login.getMensajeAdmin(), "Te chingas", JOptionPane.INFORMATION_MESSAGE);
         }
-        
-        
-        
-        
-                    
+
     }
-    private void initFields(){
+
+    private void initFields() {
         configureTextField(txtnombre, "Nombre");
         configureTextField(txtapellido, "Apellido");
         configureTextField(txtemail, "Correo Electronico");
@@ -51,6 +52,7 @@ public class RegisterGUI extends javax.swing.JFrame {
         configurePasswordField(txtpassword_confirmed, "Confirmar contraseña");
 
     }
+
     private void configureTextField(javax.swing.JTextField textField, String placeholder) {
         textField.setText(placeholder);
 
@@ -109,7 +111,7 @@ public class RegisterGUI extends javax.swing.JFrame {
             public void keyReleased(KeyEvent e) {
                 char[] password = passwordField.getPassword();
                 String currentPassword = new String(password);
-                
+
                 if (currentPassword.isEmpty()) {
                     passwordField.setText(placeholder);
                 }

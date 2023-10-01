@@ -7,16 +7,15 @@ public class ColaCircular {
     private Nodo frente;
     private Nodo atras;
     private int longitud;
-    private Pedidos pedido;
-    
+
     public ColaCircular() {
         frente = null;
         atras = null;
         longitud = 0;
     }
 
-    public void insertar(int dato) {
-        Nodo nuevoNodo = new Nodo(pedido);
+    public void insertar(Pedidos pedidos) {
+        Nodo nuevoNodo = new Nodo(pedidos);
         if (estaVacia()) {
             frente = nuevoNodo;
             atras = nuevoNodo;
@@ -46,21 +45,16 @@ public class ColaCircular {
         return frente == null;
     }
 
-    /*
-     * Para corregir el error de una excepcion Null, debemos hacer que el metodo
-     * pueda regresarnos un error de tipo NullPointerException
-     * se hace de igualmanera para el metodo getAtras()
-     */
     public Nodo getFrente() throws NullPointerException {
         if (frente == null) {
-            throw new NullPointerException("Frente no logra encontra una referencia, revise si su cola esta llena");
+            throw new NullPointerException("Frente no logra encontrar una referencia, revise si su cola está llena");
         }
         return frente;
     }
 
     public Nodo getAtras() throws NullPointerException {
         if (atras == null) {
-            throw new NullPointerException("Atras no logra encuentra una referencia, revise el tamaño de la cola");
+            throw new NullPointerException("Atras no logra encontrar una referencia, revise el tamaño de la cola");
         }
         return atras;
     }
