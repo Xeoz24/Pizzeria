@@ -1,24 +1,21 @@
 
 package GUI;
 
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 
 public class AdministradorGUI extends javax.swing.JFrame {
-    public static DefaultTableModel modelo_admin;
+    
     public AdministradorGUI() {
         initComponents();
-        modelo_admin= new DefaultTableModel();
-        modeloTabla();
     }
-    public final void modeloTabla(){
-        modelo_admin.addColumn("Nombres");
-        modelo_admin.addColumn("Apellidos");
-        modelo_admin.addColumn("Correo electronico");
-        modelo_admin.addColumn("Numero de teléfono");
-        modelo_admin.addColumn("ID");
-        registroUsuariostbl.setModel(modelo_admin);
+    
+    public static void agregarTablaAdmin(Object [] datos_filas){
+     DefaultTableModel modeloAdmin = (DefaultTableModel) registroUsuariostbl.getModel();
+     modeloAdmin.addRow(datos_filas);
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -28,7 +25,11 @@ public class AdministradorGUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         registroUsuariostbl = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
+        labelRegistroUsuarios = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaConsola = new javax.swing.JTextArea();
+        labelConsola = new javax.swing.JLabel();
+        btnIniciarSimulacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -61,42 +62,95 @@ public class AdministradorGUI extends javax.swing.JFrame {
 
         registroUsuariostbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombres", "Apellidos", "Correo electronico", "Numero de teléfono", "ID"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(registroUsuariostbl);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Registro de Usuarios");
+        labelRegistroUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelRegistroUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelRegistroUsuarios.setText("Registro de Usuarios");
+
+        txtAreaConsola.setColumns(20);
+        txtAreaConsola.setRows(5);
+        jScrollPane1.setViewportView(txtAreaConsola);
+
+        labelConsola.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelConsola.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelConsola.setText("Registro de Usuarios");
+
+        btnIniciarSimulacion.setBackground(new java.awt.Color(204, 0, 0));
+        btnIniciarSimulacion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnIniciarSimulacion.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarSimulacion.setText("Iniciar Simulación");
+        btnIniciarSimulacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIniciarSimulacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarSimulacionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(labelRegistroUsuarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(labelConsola, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(215, 215, 215)
+                .addComponent(btnIniciarSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(labelRegistroUsuarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(329, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelConsola)
+                .addGap(13, 13, 13)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnIniciarSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                .addGap(18, 18, 18))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 600, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+   
+    private void btnIniciarSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSimulacionActionPerformed
+        LoginGUI simulacion = new LoginGUI();
+        simulacion.setVisible(true);
+        simulacion.pack();
+        simulacion.setLocationRelativeTo(null);
+        simulacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        btnIniciarSimulacion.setEnabled(false);
+        
+        
+    }//GEN-LAST:event_btnIniciarSimulacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,11 +188,15 @@ public class AdministradorGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIniciarSimulacion;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable registroUsuariostbl;
+    private javax.swing.JLabel labelConsola;
+    private javax.swing.JLabel labelRegistroUsuarios;
+    private static javax.swing.JTable registroUsuariostbl;
+    private javax.swing.JTextArea txtAreaConsola;
     // End of variables declaration//GEN-END:variables
 }

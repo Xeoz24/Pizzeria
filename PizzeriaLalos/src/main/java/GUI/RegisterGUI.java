@@ -10,10 +10,7 @@ import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class RegisterGUI extends javax.swing.JFrame {
-
-    AdministradorGUI admin_form = new AdministradorGUI();
     static int IDs = 0;
-
     public RegisterGUI() {
         initComponents();
         setLocationRelativeTo(null);
@@ -29,9 +26,8 @@ public class RegisterGUI extends javax.swing.JFrame {
         telefono_aux = txttelefono.getText();
         Usuario usuario_aux = new Usuario(nombre_aux, apellidos_aux, telefono_aux, email_aux, password, IDs);
         if (Login.agregar(usuario_aux)) {
-            String[] Datos = {nombre_aux, apellidos_aux, email_aux, telefono_aux, String.valueOf(IDs)};
-            AdministradorGUI.modelo_admin.addRow(Datos);
-            admin_form.setVisible(true);
+            //String[] Datos = {nombre_aux, apellidos_aux, email_aux, telefono_aux, String.valueOf(IDs)};
+            agregarFila();
             IDs++;
             JOptionPane.showMessageDialog(RegisterGUI.this, "Registro exitoso \nBienvenido " + usuario_aux.getNombres(), "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
             LoginGUI crear = new LoginGUI();
@@ -40,7 +36,15 @@ public class RegisterGUI extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(RegisterGUI.this, Login.getMensajeAdmin(), "Te chingas", JOptionPane.INFORMATION_MESSAGE);
         }
-
+    }
+    public  void agregarFila ( ){
+     AdministradorGUI.agregarTablaAdmin(new Object[]{
+                        txtnombre.getText(),
+                        txtapellido.getText(),
+                        txtemail.getText(),
+                        txttelefono.getText(),
+                       
+                    });
     }
 
     private void initFields() {
