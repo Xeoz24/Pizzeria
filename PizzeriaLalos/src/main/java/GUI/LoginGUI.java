@@ -1,12 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package GUI;
 
+import Logica.Login;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -63,7 +62,25 @@ public class LoginGUI extends javax.swing.JFrame {
         });
     }
         public void Autenticacion(){
-        
+       String password_aux;
+       password_aux = String.valueOf(txtpassword.getPassword());
+            if (!txtcorreo_electronico.getText().isEmpty()) {
+                if (!password_aux.isEmpty()) {
+                    if (Login.autenticacion(txtcorreo_electronico.getText(), password_aux)) {
+                        MenuGUI menu = new MenuGUI();
+                        menu.setVisible(true);
+                        this.dispose();
+                    }else{
+                    JOptionPane.showMessageDialog(this, "Cuenta no existente");
+                    }
+  
+                }   
+                else{
+                JOptionPane.showMessageDialog(this, "Inserte su contraseña");
+                }
+            }else{
+             JOptionPane.showMessageDialog(this, "Inserte su metodo de iniciar sesión");
+            }
         }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -214,7 +231,7 @@ public class LoginGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_lblRegisterMouseClicked
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        
+    Autenticacion();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
