@@ -206,6 +206,20 @@ public class ElegirPizza extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public String getTamaño(){
+        return tamañoPizza.getSelectedItem().toString();
+    }
+    
+    public String getPizza(){
+        
+        return tipoPizza.getSelectedItem().toString();
+    }
+    
+    public String getNumPizza(){
+       
+        return numeroPizzas.getText();
+    }
+    
     private void tamañoPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tamañoPizzaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tamañoPizzaActionPerformed
@@ -218,7 +232,12 @@ public class ElegirPizza extends javax.swing.JFrame {
 
     private void btnOrdenarPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarPizzaActionPerformed
         
-        CarritoCompraGUI carrito = new CarritoCompraGUI();
+        CarritoCompraGUI carrito;
+        
+        String pizza = getPizza();
+        String tamaño = getTamaño();
+        String numPizza = getNumPizza();
+        carrito = new CarritoCompraGUI("Pizza: " + pizza, "\nTamaño :" + tamaño, "\nNúmero de pizzas: " + numPizza);
         carrito.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnOrdenarPizzaActionPerformed

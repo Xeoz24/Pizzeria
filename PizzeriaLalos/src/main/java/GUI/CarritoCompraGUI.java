@@ -13,9 +13,18 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
     /**
      * Creates new form CarritoCompraGUI
      */
-    public CarritoCompraGUI() {
+    public CarritoCompraGUI(String tamano,String pizza, String numero_pizza ) {
         initComponents();
         setLocationRelativeTo(null);
+        String hola =" ";
+        setTexto(tamano);
+        setTexto(pizza);
+        setTexto(numero_pizza);
+       
+    }
+    
+    public void setTexto(String texto) {
+        txtAreaCarrito.append(texto);
     }
 
     /**
@@ -73,6 +82,11 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("ELIMINAR");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         txtAreaCarrito.setEditable(false);
         txtAreaCarrito.setBackground(new java.awt.Color(204, 204, 204));
@@ -111,9 +125,22 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
         btnCompra.setBackground(new java.awt.Color(0, 102, 204));
         btnCompra.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCompra.setForeground(new java.awt.Color(255, 255, 255));
-        btnCompra.setText("COMPRAR");
+        btnCompra.setText("Comprar");
+        btnCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCompraActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("jButton1");
+        jButton1.setBackground(new java.awt.Color(0, 102, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Regresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("jButton2");
 
@@ -124,11 +151,11 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
             .addGroup(pnlPieLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(86, 86, 86)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87)
                 .addComponent(btnCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addGap(23, 23, 23))
         );
         pnlPieLayout.setVerticalGroup(
             pnlPieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,9 +163,9 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(pnlPieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         Backg.add(pnlPie, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 530, 100));
@@ -147,6 +174,20 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraActionPerformed
+        
+    }//GEN-LAST:event_btnCompraActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        txtAreaCarrito.setText("");
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ElegirPizza elegir = new ElegirPizza();
+        elegir.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,7 +219,7 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CarritoCompraGUI().setVisible(true);
+                new CarritoCompraGUI(null,null,null).setVisible(true);
             }
         });
     }
@@ -196,4 +237,8 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
     private javax.swing.JPanel pnlPie;
     private javax.swing.JTextArea txtAreaCarrito;
     // End of variables declaration//GEN-END:variables
+
+    void setText(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
