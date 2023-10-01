@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 
 public class RegisterGUI extends javax.swing.JFrame {
-    Login registro = new Login();
+
     static int IDs = 0;
     public RegisterGUI() {
         initComponents();
@@ -27,14 +27,14 @@ public class RegisterGUI extends javax.swing.JFrame {
         email_aux = txtemail.getText();
         telefono_aux = txttelefono.getText();
         Usuario usuario_aux = new Usuario(nombre_aux, apellidos_aux, telefono_aux, email_aux,password, IDs);
-        if (registro.agregar(usuario_aux)) {
+        if (Login.agregar(usuario_aux)) {
             IDs++;
             JOptionPane.showMessageDialog(RegisterGUI.this, "Registro exitoso \nBienvenido "  +usuario_aux.getNombres() , "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
             LoginGUI crear = new LoginGUI();
             crear.setVisible(true);
             this.dispose();
         }else{
-            JOptionPane.showMessageDialog(RegisterGUI.this, registro.getMensajeAdmin() , "Te chingas", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(RegisterGUI.this, Login.getMensajeAdmin() , "Te chingas", JOptionPane.INFORMATION_MESSAGE);
         }
         
         
@@ -154,6 +154,7 @@ public class RegisterGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Backg.setBackground(new java.awt.Color(255, 255, 255));
         Backg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlCabezera.setBackground(new java.awt.Color(153, 0, 51));
@@ -178,37 +179,31 @@ public class RegisterGUI extends javax.swing.JFrame {
 
         Backg.add(pnlCabezera, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 80));
 
-        txtnombre.setBackground(new java.awt.Color(240, 240, 240));
         txtnombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtnombre.setText("Nombre");
         txtnombre.setBorder(null);
         Backg.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 210, 30));
 
-        txtapellido.setBackground(new java.awt.Color(240, 240, 240));
         txtapellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtapellido.setText("Apellido");
         txtapellido.setBorder(null);
         Backg.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 210, 30));
 
-        txtemail.setBackground(new java.awt.Color(240, 240, 240));
         txtemail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtemail.setText("Correo Electronico");
         txtemail.setBorder(null);
         Backg.add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 210, 30));
 
-        txttelefono.setBackground(new java.awt.Color(240, 240, 240));
         txttelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txttelefono.setText("Teléfono");
         txttelefono.setBorder(null);
         Backg.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 210, 30));
 
-        txtpassword.setBackground(new java.awt.Color(240, 240, 240));
         txtpassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtpassword.setText("jPasswordField1");
         txtpassword.setBorder(null);
         Backg.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 210, 30));
 
-        txtpassword_confirmed.setBackground(new java.awt.Color(240, 240, 240));
         txtpassword_confirmed.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtpassword_confirmed.setText("jPasswordField2");
         txtpassword_confirmed.setBorder(null);

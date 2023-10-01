@@ -4,13 +4,8 @@ import Persistencia.Lista.ListaDoblementeEnlazada;
 
 public class ListaUsuario {
 
-    private static ListaDoblementeEnlazada<Usuario> lista_usuarios;
+    private static  ListaDoblementeEnlazada<Usuario> lista_usuarios= new ListaDoblementeEnlazada<>();
     private static String mensajes_de_administrador;
-
-    public ListaUsuario() {
-        lista_usuarios = new ListaDoblementeEnlazada();
-        mensajes_de_administrador = "";
-    }
 
     public int buscar(String metodo_de_busqueda){//puede ser correo electronico o num telefonico
         int n = -1;
