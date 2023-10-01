@@ -4,15 +4,16 @@
  */
 package GUI;
 
+import Logica.Pedidos.Pedidos;
+import Persistencia.ColaCircular.ColaCircular;
+
 /**
  *
  * @author Eduardo
  */
 public class CarritoCompraGUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CarritoCompraGUI
-     */
+     private static ColaCircular cola = new ColaCircular();
     public CarritoCompraGUI(String tamano,String pizza, String numero_pizza ) {
         initComponents();
         setLocationRelativeTo(null);
@@ -23,7 +24,7 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
        
     }
     
-    public void setTexto(String texto) {
+    public final void setTexto(String texto) {
         txtAreaCarrito.append(texto);
     }
 
@@ -46,7 +47,6 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
         pnlPie = new javax.swing.JPanel();
         btnCompra = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -132,7 +132,7 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 204));
+        jButton1.setBackground(new java.awt.Color(255, 0, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Regresar");
@@ -142,8 +142,6 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
-
         javax.swing.GroupLayout pnlPieLayout = new javax.swing.GroupLayout(pnlPie);
         pnlPie.setLayout(pnlPieLayout);
         pnlPieLayout.setHorizontalGroup(
@@ -151,9 +149,7 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
             .addGroup(pnlPieLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
                 .addComponent(btnCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -163,8 +159,7 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(pnlPieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -176,7 +171,13 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraActionPerformed
-        
+       
+        ElegirPizza elegir = new ElegirPizza();
+        Pedidos pedido = new Pedidos(elegir.getPizza(), elegir.getTamaño(), elegir.getNumPizza());
+
+        cola.insertar(pedido);
+        System.out.println(ElegirPizza.getTipo_pizza() + ElegirPizza.getTamano_pizza()+ ElegirPizza.getNum_Pizza());
+        System.out.println(cola.getLongitud());
     }//GEN-LAST:event_btnCompraActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -229,7 +230,6 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnCompra;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel pnlCompra;

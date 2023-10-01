@@ -10,9 +10,8 @@ package GUI;
  */
 public class ElegirPizza extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ElegirPizza
-     */
+    private static String tamano_pizza,numPizza,tipo_pizza; 
+        
     public ElegirPizza() {
         initComponents();
         setLocationRelativeTo(null);
@@ -206,7 +205,26 @@ public class ElegirPizza extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public String getTamaño(){
+    public static String getTamano_pizza() {
+        return tamano_pizza;
+    }
+
+    public static void setTamano_pizza(String tamano_pizza) {
+        ElegirPizza.tamano_pizza = tamano_pizza;
+    }
+
+    public static String getTipo_pizza() {
+        return tipo_pizza;
+    }
+
+    public static void setTipo_pizza(String tipo_pizza) {
+        ElegirPizza.tipo_pizza = tipo_pizza;
+    }
+    public static String getNum_Pizza() {
+        return numPizza;
+    }
+
+    public  String getTamaño(){
         return tamañoPizza.getSelectedItem().toString();
     }
     
@@ -220,6 +238,10 @@ public class ElegirPizza extends javax.swing.JFrame {
         return numeroPizzas.getText();
     }
     
+     public static void setNumPizza(String num_Pizza) {
+        ElegirPizza.numPizza = num_Pizza;
+    }
+    
     private void tamañoPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tamañoPizzaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tamañoPizzaActionPerformed
@@ -231,17 +253,21 @@ public class ElegirPizza extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarMenuActionPerformed
 
     private void btnOrdenarPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarPizzaActionPerformed
-        
         CarritoCompraGUI carrito;
-        
         String pizza = getPizza();
         String tamaño = getTamaño();
         String numPizza = getNumPizza();
+        actualizatPizza(pizza, tamaño, numPizza);
         carrito = new CarritoCompraGUI("Pizza: " + pizza, "\nTamaño :" + tamaño, "\nNúmero de pizzas: " + numPizza);
         carrito.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnOrdenarPizzaActionPerformed
-
+    public static final void actualizatPizza(String pizza,String tamano, String numPizza){
+        ElegirPizza.setNumPizza(numPizza);
+        ElegirPizza.setTamano_pizza(tamano);
+        ElegirPizza.setTipo_pizza(pizza);
+        
+    }
     /**
      * @param args the command line arguments
      */
