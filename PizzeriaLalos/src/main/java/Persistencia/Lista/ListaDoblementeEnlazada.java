@@ -25,7 +25,7 @@ public class ListaDoblementeEnlazada<T> {
         longitud++;
     }
 
-    public T obtener(int indice) {
+        public T obtener(int indice) {
         if (indice < 0 || indice >= longitud) {
             System.err.println("Índice fuera de rango");
             return null;

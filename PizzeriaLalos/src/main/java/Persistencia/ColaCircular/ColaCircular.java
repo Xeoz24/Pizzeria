@@ -27,6 +27,18 @@ public class ColaCircular {
         }
         longitud++;
     }
+    public Pedidos obtener(int indice) throws IndexOutOfBoundsException {
+    if (indice < 0 || indice >= longitud) {
+        throw new IndexOutOfBoundsException("Índice fuera de rango");
+    }
+
+    Nodo nodoActual = frente;
+    for (int i = 0; i < indice; i++) {
+        nodoActual = nodoActual.getSiguiente();
+    }
+
+    return nodoActual.getPedidos();
+}
 
     public void eliminar() {
         if (!estaVacia()) {

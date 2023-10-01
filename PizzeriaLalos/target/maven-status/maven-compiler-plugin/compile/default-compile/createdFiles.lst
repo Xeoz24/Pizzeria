@@ -1,6 +1,7 @@
 GUI\RegisterGUI$1.class
 Logica\Login.class
 GUI\EntregaPedidoGUI$2.class
+Logica\Pedidos\ColaPedidos.class
 GUI\ElegirPizza$4.class
 GUI\CarritoCompraGUI$2.class
 GUI\LoginGUI$5.class

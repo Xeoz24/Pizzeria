@@ -1,25 +1,34 @@
-
 package GUI;
 
+import Logica.Pedidos.ColaPedidos;
 import Logica.Pedidos.Pedidos;
-import Persistencia.ColaCircular.ColaCircular;
-    
+
 public class CarritoCompraGUI extends javax.swing.JFrame {
-    static int numeroPedido =0; 
-     private static ColaCircular cola = new ColaCircular();
+
+    private static int numeroPedido = 0;
+    static private Pedidos pedido;
+
     public CarritoCompraGUI() {
         initComponents();
         setLocationRelativeTo(null);
     }
-    
-    public static void setOrden(String tamano,String pizza, String numero_pizza ) {
-        txtAreaCarrito.append("______________Pedido " +(numeroPedido+1) + "______________");
+
+    public static void setOrden(String tamano, String pizza, String numero_pizza) {
+        txtAreaCarrito.append("______________Pedido " + (numeroPedido + 1) + "______________");
         txtAreaCarrito.append("\nSu pizza es: \n");
         txtAreaCarrito.append(pizza);
         txtAreaCarrito.append("\nSu tamaño es: \n");
         txtAreaCarrito.append(tamano);
-        txtAreaCarrito.append("\nLa cantidad de pizzas "+pizza+ "s que usted cargo son: \n");
+        txtAreaCarrito.append("\nLa cantidad de pizzas " + pizza + "s que usted cargo son: \n");
         txtAreaCarrito.append(numero_pizza);
+    }
+
+    public static Pedidos getPedido() {
+        return pedido;
+    }
+
+    public static void setPedido(Pedidos pedido) {
+        CarritoCompraGUI.pedido = pedido;
     }
 
     /**
@@ -164,13 +173,14 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraActionPerformed
-       
-        Pedidos pedido = new Pedidos(ElegirPizza.getTipo_pizza(), ElegirPizza.getTamano_pizza(),  ElegirPizza.getNum_Pizza(),String.valueOf(numeroPedido),LoginGUI.getUsuarioRegistrado());
-        cola.insertar(pedido);
+
+        pedido = new Pedidos(ElegirPizza.getTipo_pizza(), ElegirPizza.getTamano_pizza(), ElegirPizza.getNum_Pizza(), String.valueOf(numeroPedido), LoginGUI.getUsuarioRegistrado());
+        ColaPedidos.agregarCola(pedido);
+        AdministradorGUI.setMensajeAdminstrador("Pedido de " + pedido.getUsuario().getNombres() + " con ID " + pedido.getUsuario().getID() + "en cola: " + ColaPedidos.getLongitud());
         numeroPedido++;
-        EntregaPedidoGUI confirmaciónPedido =new EntregaPedidoGUI();
+        EntregaPedidoGUI confirmaciónPedido = new EntregaPedidoGUI();
         confirmaciónPedido.setVisible(true);
-        
+
     }//GEN-LAST:event_btnCompraActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed

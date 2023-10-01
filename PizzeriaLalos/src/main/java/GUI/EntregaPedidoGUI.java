@@ -1,6 +1,8 @@
 
 package GUI;
 
+import Logica.Pedidos.ColaPedidos;
+
 public class EntregaPedidoGUI extends javax.swing.JFrame {
 
     public EntregaPedidoGUI() {
@@ -139,7 +141,8 @@ public class EntregaPedidoGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmar_pedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmar_pedidoActionPerformed
-        
+        ColaPedidos.eliminarDeCola();
+        AdministradorGUI.setMensajeAdminstrador("El pedido de " + CarritoCompraGUI.getPedido().getUsuario().getNombres() + " ha sido entregado, La cola se encuntra vacía" + ColaPedidos.getLongitud() );
     }//GEN-LAST:event_btnConfirmar_pedidoActionPerformed
 
     /**
