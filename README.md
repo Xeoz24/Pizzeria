@@ -9,6 +9,14 @@ Mini proyecto de la materia de Estructura de Datos en el que se hace la implemen
 ## ¿Como funciona?.
 
 Nuestro proyecto se basa en la implementación de las estructura de datos para resolver algún problema de la vida real. Escogimos en este caso, el problema de una pizzaeria, que no tiene como manejar los pedidos hechos por los consumidores en una plataforma digital, y tampoco tiene como buscar las cuentas de sus usarios en dicha plataforma.
+## Modo de uso.
+- Abrir NetBeans:
+- Inicia NetBeans desde tu computadora.
+- Abre el proyecto que contiene los paquetes. Asegúrate de tener el proyecto adecuado en NetBeans.
+- En el explorador de proyectos de NetBeans, busca el paquete llamado "GUI".
+- Haz clic derecho en el archivo "AdministradorGUI.java" que se encuentra dentro del paquete "GUI".
+- Selecciona la opción "Ejecutar Archivo" (o "Run File" en inglés).Esto abrirá el formulario "AdministradorGUI" en una ventana separada, el cual administrará la simulación.
+- En el formulario "AdministradorGUI", verás diversos campos y componentes gráficos (etiquetas, cuadros de texto, botones, etc.).Completa los campos según las instrucciones o necesidades de tu simulación. 
 
 ## Implementación de una lista.
 
