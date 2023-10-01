@@ -7,7 +7,7 @@ public class Login {
 
     public Login() {
     }
-
+    
      public static boolean autenticacion(String metodo_registro, String password) {
         boolean autenticacion = false;   
         int IDaux = lista_usuarios.buscar(metodo_registro);

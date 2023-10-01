@@ -11,10 +11,12 @@ package GUI;
 public class ElegirPizza extends javax.swing.JFrame {
 
     private static String tamano_pizza,numPizza,tipo_pizza; 
+    CarritoCompraGUI carrito;
         
     public ElegirPizza() {
         initComponents();
         setLocationRelativeTo(null);
+        carrito = new CarritoCompraGUI();
     }
 
     /**
@@ -253,12 +255,11 @@ public class ElegirPizza extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarMenuActionPerformed
 
     private void btnOrdenarPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarPizzaActionPerformed
-        CarritoCompraGUI carrito;
         String pizza = getPizza();
         String tamaño = getTamaño();
         String numPizza = getNumPizza();
         actualizatPizza(pizza, tamaño, numPizza);
-        carrito = new CarritoCompraGUI("Pizza: " + pizza, "\nTamaño :" + tamaño, "\nNúmero de pizzas: " + numPizza);
+        CarritoCompraGUI.setOrden(tamaño, pizza, numPizza);
         carrito.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnOrdenarPizzaActionPerformed

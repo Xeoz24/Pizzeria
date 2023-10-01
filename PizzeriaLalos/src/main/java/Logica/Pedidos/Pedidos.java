@@ -1,15 +1,21 @@
 package Logica.Pedidos;
 
+import Logica.Usuario;
+
 public class Pedidos {
 
     private String tipo_pizza;
     private String tamano_pizza;
     private String cantidad;
+    private String numeroPedido;
+    Usuario usuario;
 
-    public Pedidos(String tipo_pizza, String tamano_pizza, String cantidad) {
+    public Pedidos(String tipo_pizza, String tamano_pizza, String cantidad,String numeroPedido,Usuario usuario) {
         this.tipo_pizza = tipo_pizza;
         this.tamano_pizza = tamano_pizza;
         this.cantidad = cantidad;
+        this.numeroPedido = numeroPedido;
+        this.usuario = usuario;
     }
 
     public String getTipo_pizza() {

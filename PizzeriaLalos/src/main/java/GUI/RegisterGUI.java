@@ -26,24 +26,25 @@ public class RegisterGUI extends javax.swing.JFrame {
         telefono_aux = txttelefono.getText();
         Usuario usuario_aux = new Usuario(nombre_aux, apellidos_aux, telefono_aux, email_aux, password, IDs);
         if (Login.agregar(usuario_aux)) {
-            //String[] Datos = {nombre_aux, apellidos_aux, email_aux, telefono_aux, String.valueOf(IDs)};
-            agregarFila();
+            agregarTabla(IDs);
+            AdministradorGUI.setMensajeAdminstrador(Login.getMensajeAdmin());
             IDs++;
             JOptionPane.showMessageDialog(RegisterGUI.this, "Registro exitoso \nBienvenido " + usuario_aux.getNombres(), "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
             LoginGUI crear = new LoginGUI();
             crear.setVisible(true);
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(RegisterGUI.this, Login.getMensajeAdmin(), "Te chingas", JOptionPane.INFORMATION_MESSAGE);
+            AdministradorGUI.setMensajeAdminstrador(Login.getMensajeAdmin());
+            JOptionPane.showMessageDialog(RegisterGUI.this, Login.getMensajeAdmin(), "Problema con el registro", JOptionPane.INFORMATION_MESSAGE);
         }
     }
-    public  void agregarFila ( ){
+    public  void agregarTabla (int ID ){
      AdministradorGUI.agregarTablaAdmin(new Object[]{
                         txtnombre.getText(),
                         txtapellido.getText(),
                         txtemail.getText(),
                         txttelefono.getText(),
-                       
+                        ID
                     });
     }
 

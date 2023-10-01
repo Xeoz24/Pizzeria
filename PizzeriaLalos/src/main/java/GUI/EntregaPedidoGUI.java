@@ -139,7 +139,7 @@ public class EntregaPedidoGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmar_pedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmar_pedidoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnConfirmar_pedidoActionPerformed
 
     /**

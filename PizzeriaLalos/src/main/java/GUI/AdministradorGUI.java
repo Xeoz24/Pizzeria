@@ -1,6 +1,7 @@
 
 package GUI;
 
+import Logica.Login;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,6 +15,9 @@ public class AdministradorGUI extends javax.swing.JFrame {
     public static void agregarTablaAdmin(Object [] datos_filas){
      DefaultTableModel modeloAdmin = (DefaultTableModel) registroUsuariostbl.getModel();
      modeloAdmin.addRow(datos_filas);
+    }
+    public static final void setMensajeAdminstrador(String mensaje){
+    txtAreaConsola.append(Login.getMensajeAdmin()+"\n");
     }
     
     @SuppressWarnings("unchecked")
@@ -148,8 +152,6 @@ public class AdministradorGUI extends javax.swing.JFrame {
         simulacion.setLocationRelativeTo(null);
         simulacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         btnIniciarSimulacion.setEnabled(false);
-        
-        
     }//GEN-LAST:event_btnIniciarSimulacionActionPerformed
 
     /**
@@ -197,6 +199,6 @@ public class AdministradorGUI extends javax.swing.JFrame {
     private javax.swing.JLabel labelConsola;
     private javax.swing.JLabel labelRegistroUsuarios;
     private static javax.swing.JTable registroUsuariostbl;
-    private javax.swing.JTextArea txtAreaConsola;
+    private static javax.swing.JTextArea txtAreaConsola;
     // End of variables declaration//GEN-END:variables
 }

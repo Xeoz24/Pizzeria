@@ -39,4 +39,5 @@ GUI\MenuGUI$2.class
 GUI\EntregaPedidoGUI$1.class
 Persistencia\ColaCircular\ColaCircular.class
 GUI\RegisterGUI$2.class
+Logica\Pedidos\Pizza.class
 GUI\CarritoCompraGUI$1.class

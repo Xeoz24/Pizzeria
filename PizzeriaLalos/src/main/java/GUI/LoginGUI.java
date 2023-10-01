@@ -1,29 +1,25 @@
-
 package GUI;
 
 import Logica.Login;
+import Logica.Usuario;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Eduardo
- */
 public class LoginGUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+    private static Usuario usuarioRegistrado;
+
     public LoginGUI() {
         initComponents();
         setLocationRelativeTo(null);
         initFields();
     }
-   //Metodos Propios 
-    public  final void initFields (){
-      txtcorreo_electronico.addFocusListener(new FocusListener() {
+    //Metodos Propios 
+
+    public final void initFields() {
+        txtcorreo_electronico.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
                 if (txtcorreo_electronico.getText().equals("Correo electronico")) {
@@ -61,27 +57,38 @@ public class LoginGUI extends javax.swing.JFrame {
             }
         });
     }
-        public void Autenticacion(){
-       String password_aux;
-       password_aux = String.valueOf(txtpassword.getPassword());
-            if (!txtcorreo_electronico.getText().isEmpty()) {
-                if (!password_aux.isEmpty()) {
-                    if (Login.autenticacion(txtcorreo_electronico.getText(), password_aux)) {
-                        MenuGUI menu = new MenuGUI();
-                        menu.setVisible(true);
-                        this.dispose();
-                    }else{
+
+    public void Autenticacion() {
+        String password_aux;
+        password_aux = String.valueOf(txtpassword.getPassword());
+        if (!txtcorreo_electronico.getText().isEmpty()) {
+            if (!password_aux.isEmpty()) {
+                if (Login.autenticacion(txtcorreo_electronico.getText(), password_aux)) {
+                     usuarioRegistrado = Login.obtenerUsuario(Login.buscarUsuario(txtcorreo_electronico.getText())) ;
+                     AdministradorGUI.setMensajeAdminstrador("Usuario " + usuarioRegistrado.getID()+" ha iniciado sesión" );
+                    MenuGUI menu = new MenuGUI();
+                    menu.setVisible(true);
+                    this.dispose();
+                } else {
                     JOptionPane.showMessageDialog(this, "Cuenta no existente");
-                    }
-  
-                }   
-                else{
-                JOptionPane.showMessageDialog(this, "Inserte su contraseña");
                 }
-            }else{
-             JOptionPane.showMessageDialog(this, "Inserte su metodo de iniciar sesión");
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Inserte su contraseña");
             }
+        } else {
+            JOptionPane.showMessageDialog(this, "Inserte su metodo de iniciar sesión");
         }
+    }
+
+    public static Usuario getUsuarioRegistrado() {
+        return usuarioRegistrado;
+    }
+
+    public static void setUsuarioRegistrado(Usuario usuarioRegistrado) {
+        LoginGUI.usuarioRegistrado = usuarioRegistrado;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -231,7 +238,7 @@ public class LoginGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_lblRegisterMouseClicked
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-    Autenticacion();
+        Autenticacion();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**

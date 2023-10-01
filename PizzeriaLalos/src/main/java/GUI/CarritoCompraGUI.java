@@ -1,31 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package GUI;
 
 import Logica.Pedidos.Pedidos;
 import Persistencia.ColaCircular.ColaCircular;
-
-/**
- *
- * @author Eduardo
- */
+    
 public class CarritoCompraGUI extends javax.swing.JFrame {
-
+    static int numeroPedido =0; 
      private static ColaCircular cola = new ColaCircular();
-    public CarritoCompraGUI(String tamano,String pizza, String numero_pizza ) {
+    public CarritoCompraGUI() {
         initComponents();
         setLocationRelativeTo(null);
-        String hola =" ";
-        setTexto(tamano);
-        setTexto(pizza);
-        setTexto(numero_pizza);
-       
     }
     
-    public final void setTexto(String texto) {
-        txtAreaCarrito.append(texto);
+    public static void setOrden(String tamano,String pizza, String numero_pizza ) {
+        txtAreaCarrito.append("______________Pedido " +(numeroPedido+1) + "______________");
+        txtAreaCarrito.append("\nSu pizza es: \n");
+        txtAreaCarrito.append(pizza);
+        txtAreaCarrito.append("\nSu tamaño es: \n");
+        txtAreaCarrito.append(tamano);
+        txtAreaCarrito.append("\nLa cantidad de pizzas "+pizza+ "s que usted cargo son: \n");
+        txtAreaCarrito.append(numero_pizza);
     }
 
     /**
@@ -76,7 +70,7 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
 
         Backg.add(pnlEncabezado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 70));
 
-        pnlCompra.setBackground(new java.awt.Color(204, 204, 204));
+        pnlCompra.setBackground(new java.awt.Color(255, 255, 255));
 
         btnEliminar.setBackground(new java.awt.Color(204, 0, 51));
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -89,7 +83,6 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
         });
 
         txtAreaCarrito.setEditable(false);
-        txtAreaCarrito.setBackground(new java.awt.Color(204, 204, 204));
         txtAreaCarrito.setColumns(20);
         txtAreaCarrito.setRows(5);
         txtAreaCarrito.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -172,12 +165,12 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
 
     private void btnCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraActionPerformed
        
-        ElegirPizza elegir = new ElegirPizza();
-        Pedidos pedido = new Pedidos(elegir.getPizza(), elegir.getTamaño(), elegir.getNumPizza());
-
+        Pedidos pedido = new Pedidos(ElegirPizza.getTipo_pizza(), ElegirPizza.getTamano_pizza(),  ElegirPizza.getNum_Pizza(),String.valueOf(numeroPedido),LoginGUI.getUsuarioRegistrado());
         cola.insertar(pedido);
-        System.out.println(ElegirPizza.getTipo_pizza() + ElegirPizza.getTamano_pizza()+ ElegirPizza.getNum_Pizza());
-        System.out.println(cola.getLongitud());
+        numeroPedido++;
+        EntregaPedidoGUI confirmaciónPedido =new EntregaPedidoGUI();
+        confirmaciónPedido.setVisible(true);
+        
     }//GEN-LAST:event_btnCompraActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -220,7 +213,7 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CarritoCompraGUI(null,null,null).setVisible(true);
+                new CarritoCompraGUI().setVisible(true);
             }
         });
     }
@@ -235,7 +228,7 @@ public class CarritoCompraGUI extends javax.swing.JFrame {
     private javax.swing.JPanel pnlCompra;
     private javax.swing.JPanel pnlEncabezado;
     private javax.swing.JPanel pnlPie;
-    private javax.swing.JTextArea txtAreaCarrito;
+    private static javax.swing.JTextArea txtAreaCarrito;
     // End of variables declaration//GEN-END:variables
 
     void setText(String string) {
