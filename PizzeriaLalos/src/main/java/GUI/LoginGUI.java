@@ -4,19 +4,17 @@
  */
 package GUI;
 
+import Logica.Login;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Eduardo
  */
 public class LoginGUI extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Login
-     */
     public LoginGUI() {
         initComponents();
         setLocationRelativeTo(null);
@@ -62,8 +60,24 @@ public class LoginGUI extends javax.swing.JFrame {
             }
         });
     }
-        public void Autenticacion(){
-        
+     public void Autenticacion(){
+       String password_aux;
+       password_aux = String.valueOf(txtpassword.getPassword());
+            if (!txtcorreo_electronico.getText().isEmpty()) {
+                if (!password_aux.isEmpty()) {
+                    if (Login.autenticacion(txtcorreo_electronico.getText(), password_aux)) {
+                        JOptionPane.showMessageDialog(this, "Hola");
+                    }else{
+                    JOptionPane.showMessageDialog(this, "Cuenta no existente");
+                    }
+  
+                }   
+                else{
+                JOptionPane.showMessageDialog(this, "Inserte su contraseña");
+                }
+            }else{
+             JOptionPane.showMessageDialog(this, "Inserte su metodo de iniciar sesión");
+            }
         }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,6 +108,7 @@ public class LoginGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Backg.setBackground(new java.awt.Color(255, 255, 255));
         Backg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlEncabezado.setBackground(new java.awt.Color(153, 0, 51));
@@ -158,9 +173,14 @@ public class LoginGUI extends javax.swing.JFrame {
 
         Backg.add(pnlPizzeria, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 90, 240));
 
-        txtcorreo_electronico.setBackground(new java.awt.Color(240, 240, 240));
+        txtcorreo_electronico.setBackground(new java.awt.Color(255, 255, 255));
         txtcorreo_electronico.setText("Correo electronico");
         txtcorreo_electronico.setBorder(null);
+        txtcorreo_electronico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcorreo_electronicoActionPerformed(evt);
+            }
+        });
         Backg.add(txtcorreo_electronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 210, 30));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -169,11 +189,11 @@ public class LoginGUI extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         Backg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 210, 10));
 
-        txtpassword.setBackground(new java.awt.Color(240, 240, 240));
         txtpassword.setText("jPasswordField1");
         txtpassword.setBorder(null);
         Backg.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 210, 30));
 
+        cbRember_me.setBackground(new java.awt.Color(255, 255, 255));
         cbRember_me.setText("Recuerda me");
         cbRember_me.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Backg.add(cbRember_me, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
@@ -223,12 +243,16 @@ public class LoginGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_lblRegisterMouseClicked
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        
+    Autenticacion();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void jLabel2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel2AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2AncestorAdded
+
+    private void txtcorreo_electronicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcorreo_electronicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcorreo_electronicoActionPerformed
 
     /**
      * @param args the command line arguments
