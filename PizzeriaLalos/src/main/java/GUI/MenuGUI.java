@@ -49,7 +49,7 @@ public class MenuGUI extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        elegirPizza = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -93,7 +93,12 @@ public class MenuGUI extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(153, 0, 0));
 
-        jButton1.setText("Elegir pizzas");
+        elegirPizza.setText("Elegir pizzas");
+        elegirPizza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elegirPizzaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,7 +162,7 @@ public class MenuGUI extends javax.swing.JFrame {
                 .addGap(174, 174, 174))
             .addGroup(layout.createSequentialGroup()
                 .addGap(306, 306, 306)
-                .addComponent(jButton1)
+                .addComponent(elegirPizza)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -187,7 +192,7 @@ public class MenuGUI extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(elegirPizza)
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
@@ -203,6 +208,12 @@ public class MenuGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void elegirPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elegirPizzaActionPerformed
+        ElegirPizza seleccionarPizza = new ElegirPizza();
+        seleccionarPizza.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_elegirPizzaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,7 +258,7 @@ public class MenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton elegirPizza;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
